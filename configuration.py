@@ -1,5 +1,6 @@
 class Configuration:
     """ Setting Values """
+    INPUT_FILE_NAME = 'input.txt'
     MORNING_SESSION_TIME = 180
     MORNING_SESSION_START_TIME = '9'
     AFTERNOON_SESSION_TIME = 240

@@ -17,7 +17,7 @@ def run():
 
     """ Read of input (Tracks) """
     try:
-        with open('input.txt') as f:
+        with open(Configuration().INPUT_FILE_NAME) as f:
             for line in f:
                 words = line.split(' ')
                 length_in_text = words[-1].rstrip('\r\n')
@@ -34,7 +34,7 @@ def run():
     except FileNotFoundError:
         print('No existe el archivo \'input.txt\'')
 
-    # OOrdering talks not organized by descending length time
+    # Ordering talks not organized by descending length time
     unorganized_talks = sorted(
         unorganized_talks,
         key=lambda talk: talk.length,
@@ -55,7 +55,7 @@ def run():
         track = Track(t + 1)
         conference.add_track(track)
 
-    # tracks = []
+    """ Assignment of talks in seassions and tracks """
     tracks = conference.tracks()
     organized_talks = []
     for t in tracks:
@@ -63,7 +63,10 @@ def run():
         for s in t.sessions():
 
             # Remove talks already organized and order
-            unorganized_talks = set(unorganized_talks).difference(organized_talks)
+            unorganized_talks = set(
+                unorganized_talks
+            ).difference(organized_talks)
+
             unorganized_talks = sorted(
                 unorganized_talks,
                 key=lambda talk: talk.length,
