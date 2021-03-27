@@ -1,13 +1,13 @@
 # conference-track-management
 
 ## Solutions
-Step-1: Read talks input from file and create a list of unorganized talks with them.
+Step-1: Read talks input from file (file name configured in 'configuration.py') and create a list of unorganized talks with them.
 
 Step-2: Ordering talks not organized by descending length time.
 
 Step-3: Calculate number of tracks to be created based on talks total duration. Then create them.
 
-Step-4: Assignment of talks in sessions and tracks, validating is there is available time in each session before to be added. Then remove from list of unorganized talks, all talks already added into a session.
+Step-4: Assignment of talks in sessions and tracks, validating if there is available time in each session before to be added. Then remove from list of unorganized talks, all talks already added into a session.
 
 Step-5: Finally, add default activities like 'Lunch' or 'Networking Time'.
 
